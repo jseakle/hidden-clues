@@ -4,6 +4,12 @@ This is a Chrome extension that hides each clue of a crossword puzzle on https:/
 
 I made this because it's quite fun to see how few you can use, and to think about strategies for revealing clues optimally. I try to aim for under 33% of clues revealed on a themed puzzle and under 50% on a themeless, though of course how viable this is will vary. I also count myself as having met this goal if there are a handful of isolated empty squares that could have one of several letters in them with no way to disambiguate except to reveal another clue.
 
+**Installation**
+
+Enable "developer mode" on the extensions page, then click "load unpacked" and choose the project directory.
+
+**LLM use**
+
 This was made almost entirely with ChatGPT 5. I don't think LLMs are well suited for many purposes other than quickly making trivial bits of software like this, but it sure did nearly one-shot this task. However, it failed completely at linking the over-the-grid highligted clue box to the side panel clues, so I gave up on that eventually. I also spent way too long trying to use it to refine the button size and position, I should have just given up and done that part by hand.
 
 Here are the lightly-edited prompts that produced the initial almost-entirely-working version:

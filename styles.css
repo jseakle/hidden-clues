@@ -1,0 +1,106 @@
+:root {
+  --copilot-btnh: 24px; /* DFA: fixed identical button height */
+}
+
+/* Draggable counter */
+#copilot-clue-counter {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  z-index: 2147483647;
+  display: none;
+  align-items: center;
+  gap: 8px;
+  background: rgba(20, 20, 20, 0.85);
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.2;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+  backdrop-filter: saturate(140%) blur(6px);
+  border: 1px solid rgba(255,255,255,0.15);
+  cursor: move;
+  user-select: none;
+}
+#copilot-clue-counter.copilot-counter-dragging { transition: none; opacity: 0.95; }
+
+/* Button inside counter */
+#copilot-clue-counter .copilot-reveal-all-btn {
+  appearance: none;
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.35);
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  font: inherit;
+  line-height: 1;
+  cursor: pointer;
+  white-space: nowrap;
+}
+#copilot-clue-counter .copilot-reveal-all-btn:hover {
+  background: rgba(255,255,255,0.18);
+  border-color: rgba(255,255,255,0.5);
+}
+
+/* We only hide panels by adding this class in JS */
+.copilot-hide-panel { display: none !important; }
+
+/* Keep the clue number as-is (inherits site styling) */
+.copilot-clue-number { margin-right: 6px; user-select: none; }
+
+/* DFA: while hidden, lock the body cell to a uniform single line; no leakage */
+.copilot-body-locked {
+  height: var(--copilot-btnh) !important;
+  min-height: var(--copilot-btnh) !important;
+  max-height: var(--copilot-btnh) !important;
+  overflow: hidden !important;
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+/* Squares: lock row to pre-hide height; button fills 100% => no jump */
+.copilot-row-locked { min-height: var(--copilot-rowh, 1em); }
+.copilot-holder.copilot-locked { height: var(--copilot-rowh, 1em); }
+.copilot-holder.copilot-locked .copilot-clue-button { height: 100%; }
+
+/* Multiline rows on Squares: let the button size naturally a bit */
+.copilot-holder.copilot-multiline .copilot-clue-button {
+  height: auto;
+  padding: 4px 8px;
+}
+
+/* Holder and button (inline) */
+.copilot-holder {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: baseline;
+  position: relative;
+  pointer-events: auto;
+}
+
+/* Base button style (context decides height) */
+.copilot-clue-button {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;  /* horizontal only */
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.25);
+  border-radius: 6px;
+  background: #f1f1f1;
+  color: #111;
+  font: inherit;
+  white-space: nowrap;
+  line-height: 1;
+  cursor: pointer;
+  transition: transform 0.06s ease, background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+/* DFA context: fixed single-line button height */
+.copilot-body-locked > .copilot-holder > .copilot-clue-button { height: var(--copilot-btnh); }
+
+.copilot-clue-button:hover { background: #e9e9e9; border-color: rgba(0,0,0,0.35); }
+.copilot-clue-button:active { transform: translateY(1px); }

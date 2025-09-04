@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Squares + DownForACross Clue Hider (Squares: banner hidden, stable rows; DFA unchanged)",
+  "description": "Squares: hide the over-grid panel (.banner) and keep side-list rows stable with inline reveal buttons. DFA: hide over-grid panel and keep uniform hidden rows.",
+  "version": "1.9.6",
+  "icons": {},
+  "content_scripts": [
+    {
+      "matches": [
+        "https://squares.io/*",
+        "https://downforacross.com/*"
+      ],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}

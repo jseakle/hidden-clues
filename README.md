@@ -10,7 +10,7 @@ Enable "developer mode" on the extensions page, then click "load unpacked" and c
 
 **LLM use**
 
-This was made almost entirely with ChatGPT 5. I don't think LLMs are well suited for many purposes other than quickly making trivial bits of software like this, but it sure did nearly one-shot this task. However, it failed completely at linking the over-the-grid highligted clue box to the side panel clues, so I gave up on that eventually. I also spent way too long trying to use it to refine the button size and position, I should have just given up and done that part by hand.
+This was made almost entirely with GPT 5. I think OpenAI and other such companies are very evil and doing great harm, but my employer is already paying them for access, so I don't think I've meaningfully supported them in the couple hours I spent on this. I also don't think LLMs are well suited for many purposes, but quickly making trivial bits of software like this is one them, and GPT 5 very nearly one-shot this task. However, it failed completely at linking the over-the-grid highligted clue box to the side panel clues, so I gave up on that eventually. I also spent way too long trying to use it to refine the button size and position, I should have just given up and done that part by hand.
 
 Here are the lightly-edited prompts that produced the initial almost-entirely-working version:
 
